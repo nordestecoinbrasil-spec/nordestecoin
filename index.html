@@ -8,79 +8,193 @@
 
 <title>Nordestecoin ($NORD)</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(to bottom,#000000,#111111);
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050505;
 color:white;
-text-align:center;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:600px;
+height:600px;
+background:gold;
+filter:blur(180px);
+opacity:0.08;
+top:-200px;
+right:-200px;
+z-index:-1;
 }
 
 .container{
-max-width:1000px;
+max-width:1200px;
 margin:auto;
-padding:40px 20px;
+padding:20px;
 }
 
-.logo{
-width:280px;
-border-radius:50%;
-box-shadow:0 0 40px gold;
-margin-top:20px;
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
 }
 
-h1{
-font-size:70px;
+.logoText{
+font-size:28px;
+font-weight:800;
 color:gold;
-margin-bottom:10px;
 }
 
-.subtitle{
-font-size:22px;
-color:#ffcc00;
-margin-bottom:30px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 30px;
-margin:10px;
-background:linear-gradient(45deg,gold,#ffcc00);
-color:black;
-font-weight:bold;
+nav a{
+color:white;
 text-decoration:none;
-border-radius:12px;
+margin-left:25px;
+font-weight:500;
 transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.05);
-}
-
-.card{
-background:#161616;
-border:1px solid gold;
-border-radius:20px;
-padding:25px;
-margin-top:25px;
-}
-
-h2{
+nav a:hover{
 color:gold;
 }
 
-footer{
-margin-top:50px;
-padding:20px;
-color:#777;
+.hero{
+padding:80px 20px;
+text-align:center;
 }
 
-.contract{
-word-break:break-all;
-font-size:14px;
-color:#ffcc00;
+.hero img{
+width:260px;
+border-radius:50%;
+box-shadow:0 0 40px rgba(255,215,0,0.6);
+margin-bottom:30px;
+}
+
+.hero h1{
+font-size:90px;
+font-weight:800;
+color:gold;
+line-height:1;
+}
+
+.hero p{
+margin-top:20px;
+font-size:22px;
+color:#d6d6d6;
+}
+
+.highlight{
+color:gold;
+font-weight:700;
+}
+
+.buttons{
+margin-top:40px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:16px 30px;
+margin:10px;
+border-radius:14px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+
+.primary{
+background:linear-gradient(45deg,gold,#ffcc00);
+color:black;
+}
+
+.secondary{
+background:#151515;
+border:1px solid gold;
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.btn img{
+width:22px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:60px;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:24px;
+border:1px solid rgba(255,215,0,0.15);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:gold;
+}
+
+.card h2{
+color:gold;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.card p{
+color:#cfcfcf;
+line-height:1.7;
+}
+
+footer{
+margin-top:80px;
+padding:40px 20px;
+text-align:center;
+color:#777;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+header{
+flex-direction:column;
+gap:20px;
+}
+
+nav a{
+margin:0 10px;
+}
+
 }
 
 </style>
@@ -91,49 +205,51 @@ color:#ffcc00;
 
 <div class="container">
 
-<!-- LOGO -->
+<header>
 
-<img src="logo.png" class="logo">
+<div class="logoText">
+🌵 $NORD
+</div>
 
-<!-- TÍTULO -->
+<nav>
+<a href="#">Início</a>
+<a href="#">Comunidade</a>
+<a href="#">Roadmap</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<img src="logo.png" alt="Nordestecoin">
 
 <h1>$NORD</h1>
 
-<p class="subtitle">
-🇧🇷 A meme coin mais quente do BR ☀️🔥
+<p>
+🇧🇷 A meme coin mais quente do <span class="highlight">BR</span> ☀️🔥
 </p>
 
 <p>
 🌵 Cultura nordestina na Solana
 </p>
 
-<p>
-🐴 Feita de memes, calor e comunidade
-</p>
-
-<!-- BOTÕES -->
-
-<div style="margin-top:30px;">
+<div class="buttons">
 
 <a href="https://pump.fun/coin/FGTPPTmwL5SNn3EPtVkqmx3hXQSNubYfUTQHwvMbpump"
-class="btn"
+class="btn primary"
 target="_blank">
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbSxXAvu1N2mE-vUL_c767o4i_oAKvtU631lKdcH27bA&s=10"
-width="20"
-style="vertical-align:middle;margin-right:8px;">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbSxXAvu1N2mE-vUL_c767o4i_oAKvtU631lKdcH27bA&s=10">
 
 Comprar na Pump.fun
 
 </a>
 
 <a href="https://x.com/CoinNordeste"
-class="btn"
+class="btn secondary"
 target="_blank">
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJt0F180zb9r1HnP5BA411tpmwYcB7xSJx5XMk5ynA0vA-HyTOdwhmnxM7&s=10"
-width="20"
-style="vertical-align:middle;margin-right:8px;">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJt0F180zb9r1HnP5BA411tpmwYcB7xSJx5XMk5ynA0vA-HyTOdwhmnxM7&s=10">
 
 Twitter/X
 
@@ -141,98 +257,60 @@ Twitter/X
 
 </div>
 
-<!-- SOBRE -->
+</section>
+
+<section class="grid">
 
 <div class="card">
 
 <h2>🌵 O que é a Nordestecoin?</h2>
 
 <p>
-A primeira meme coin raiz do Nordeste brasileiro.
-Criada para unir memes, calor, cultura e comunidade.
+A primeira meme coin inspirada na cultura nordestina.
+Criada para unir memes, humor e comunidade no ecossistema Solana.
 </p>
 
 </div>
-
-<!-- FOMO -->
-
-<div class="card">
-
-<h2>👀 Por que $NORD?</h2>
-
-<p>
-A internet já teve cachorros e sapos.
-</p>
-
-<p>
-Agora o BR tem o jegue 🐴🔥
-</p>
-
-</div>
-
-<!-- MEME -->
 
 <div class="card">
 
 <h2>😂 Energia Meme</h2>
 
 <p>
-☀️ Mais quente que o sol do Nordeste
-</p>
-
-<p>
-🌵 Mais resistente que o sertão
-</p>
-
-<p>
-🚀 Mais comunidade que sua coin favorita
+Mais quente que o sol do Nordeste.
+Mais resistente que o sertão.
+Mais forte que sua coin favorita.
 </p>
 
 </div>
 
-<!-- ROADMAP -->
+<div class="card">
+
+<h2>🚀 Comunidade</h2>
+
+<p>
+Uma comunidade brasileira feita para transformar meme em movimento.
+</p>
+
+</div>
 
 <div class="card">
 
 <h2>📈 Roadmap</h2>
 
-<p>✅ Lançamento na Pump.fun</p>
-
-<p>🌵 Crescer a comunidade BR</p>
-
-<p>🚀 Chegar na DexScreener</p>
-
-<p>🔥 Viralizar no Twitter/X</p>
-
-<p>🇧🇷 Dominar o BR</p>
-
-</div>
-
-<!-- CONTRATO -->
-
-<div class="card">
-
-<h2>🔥 Contrato Oficial</h2>
-
-<p class="contract">
-FGTPPTmwL5SNn3EPtVkqmx3hXQSNubYfUTQHwvMbpump
-</p>
-
-</div>
-
-<!-- COMUNIDADE -->
-
-<div class="card">
-
-<h2>😂 Lema da Comunidade</h2>
-
 <p>
-“Quem não compra tá aperreado.”
+✅ Lançamento na Pump.fun<br><br>
+
+🌵 Crescimento da comunidade BR<br><br>
+
+🚀 Viralizar no Twitter/X<br><br>
+
+🔥 Chegar na DexScreener
 </p>
 
 </div>
 
-<!-- RODAPÉ -->
+</section>
 
 <footer>
 
